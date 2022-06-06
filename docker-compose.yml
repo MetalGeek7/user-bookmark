@@ -10,6 +10,16 @@ services:
       POSTGRES_DB: nest
     networks:
       - js-nest-tut
+  test-db:
+    image: postgres:13
+    ports: 
+      - 5435:5432
+    environment:
+      POSTGRES_USER: abs
+      POSTGRES_PASSWORD: justdoit
+      POSTGRES_DB: test
+    networks:
+      - js-nest-tut      
 networks:
   js-nest-tut:
 
